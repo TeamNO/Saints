@@ -20,6 +20,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+                //Default is roster page.
 		$this->load->view('Rosterview');
 	}
 }

@@ -6,12 +6,12 @@ class Playerroster extends CI_Model
         parent::__construct();
     }
 
-    // Returns the players array
+    // Returns the players array for the roster page
     function all() {
         return $this->player_array;
     }
-    //Players on the roster
- var $player_array = array(
+    //Array for players on the roster
+    var $player_array = array(
         array(
             'id'      => '1',
             '#'       => '50',

@@ -1,5 +1,9 @@
 <!doctype html>
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<!-- TEMPLATE CREATED BY KEVIN THET USING FOUNDATION 5 CSS
+    This is the template used to create the Roster page. 
+    This template can be used by any other page as well.
+-->
 
 <html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
 <head>
@@ -24,8 +28,8 @@
 <li><a href="#" class="button">League</a></li>
 </ul>
 </div>
-    {content}
     
+    {content} 
     
 <div class="large-6 columns">
 <ul class="inline-list right">
