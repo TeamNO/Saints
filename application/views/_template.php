@@ -22,10 +22,10 @@
 <div class="large-12 columns">
 <div class="nav-bar right">
 <ul class="button-group">
-<li><a href="#" class="button">Home</a></li>
-<li><a href="#" class="button">About</a></li>
-<li><a href="#" class="button">Roster</a></li>
-<li><a href="#" class="button">League</a></li>
+<li><a href='/' class="button">Home</a></li>
+<li><a href='roster' class="button">Roster</a></li>
+<li><a href='league' class="button">League</a></li>
+<li><a href='about' class="button">About</a></li>
 </ul>
 </div>
     
@@ -33,10 +33,10 @@
     
 <div class="large-6 columns">
 <ul class="inline-list right">
-<li><a href="#">Home</a></li>
-<li><a href="#">About</a></li>
-<li><a href="#">Roster</a></li>
-<li><a href="#">League</a></li>
+<li><a href="/">Home</a></li>
+<li><a href="roster">Roster</a></li>
+<li><a href="league">League</a></li>
+<li><a href="about">About</a></li>
 </ul>
 </div>
 </div>
