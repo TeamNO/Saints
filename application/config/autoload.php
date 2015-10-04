@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array();
+$autoload['libraries'] = array('parser');
 
 /*
 | -------------------------------------------------------------------
@@ -83,7 +83,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array();
+$autoload['helper'] = array('common', 'url');
 
 /*
 | -------------------------------------------------------------------
@@ -126,7 +126,5 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-//autoloads the model playerroster into every controller for ease of access.
-$autoload['model'] = array('Playerroster');
-$autoload['libraries'] = array('parser');
+$autoload['model'] = array('PlayerRoster', 'teams');
 //$autoload['model'] = array('teams', 'roster_players');
