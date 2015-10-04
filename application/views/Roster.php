@@ -1,5 +1,6 @@
 <!doctype html>
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+
 <html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
 <head>
 <meta charset="utf-8"/>
@@ -38,6 +39,35 @@
 <div class="row">
 <div class="large-6 columns">
 <p>THE SAINTS</p>
+<div class="row">
+    <div class="col-md-12 roster">
+        <h1>Team Roster For New Orleans Saints</h1>
+        <table id="rostertable" class="display" cellspacing="0" width="100%">
+            <thead>
+            <tr>
+                <th>Jersey</th>
+                <th>Name</th>           
+            </tr>
+            </thead>
+
+            <tfoot>
+            <tr>
+                <th>Jersey</th>
+                <th>Name</th>
+            </tr>
+            </tfoot>
+
+            <tbody>
+                {players}
+                    <tr>
+                        <td>{#}</td>
+                        <td>{name}</td>
+                    </tr>
+                {/players}
+            </tbody>
+        </table>
+    </div>
+</div>
 </div>
 <div class="large-6 columns">
 <img src="http://placehold.it/400x240&text=[img]"/>
