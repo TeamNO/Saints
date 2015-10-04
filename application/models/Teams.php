@@ -59,6 +59,10 @@ class Teams extends CI_Model {
         parent::__construct();
     }
     
+    /**
+     * Get all the teams.
+     * @return type
+     */
     public function get_all_teams() {
         return $this->data;
     }
@@ -75,5 +79,13 @@ class Teams extends CI_Model {
             }
         } 
         return null;
+    }
+    
+    public function get_conference($conf) {
+        foreach($this->data as $record) {
+            if($record['conf'] == $conf) {
+                return $record;
+            }
+        }
     }
 }
