@@ -126,6 +126,7 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('PlayerRoster');
+//autoloads the model playerroster into every controller for ease of access.
+$autoload['model'] = array('Playerroster');
 $autoload['libraries'] = array('parser');
 //$autoload['model'] = array('teams', 'roster_players');
