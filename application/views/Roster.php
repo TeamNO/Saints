@@ -45,26 +45,44 @@
         <table id="rostertable" class="display" cellspacing="0" width="100%">
             <thead>
             <tr>
-                <th>Jersey</th>
-                <th>Name</th>           
+                <th>#</th>
+                <th>Name</th>
+                <th>Pos.</th>
+                <th>Ht.</th>
+                <th>Wt.</th>
+                <th>Age</th>
+                <th>Exp.</th>
+                <th>College</th>          
             </tr>
             </thead>
-
-            <tfoot>
-            <tr>
-                <th>Jersey</th>
-                <th>Name</th>
-            </tr>
-            </tfoot>
-
-            <tbody>
-                {players}
+           <tbody>
+                {saintroster}
                     <tr>
                         <td>{#}</td>
                         <td>{name}</td>
+                        <td>{pos}</td>
+                        <td>{ht}</td>
+                        <td>{wt}</td>
+                        <td>{age}</td>
+                        <td>{exp}</td>
+                        <td>{college}</td>
                     </tr>
-                {/players}
+                {/saintroster}
             </tbody>
+            <tfoot>
+            <tr>
+                <td>{#}</td>
+                <td>{name}</td>
+                <td>{pos}</td>
+                <td>{ht}</td>
+                <td>{wt}</td>
+                <td>{age}</td>
+                <td>{exp}</td>
+                <td>{college}</td>
+            </tr>
+            </tfoot>
+
+ 
         </table>
     </div>
 </div>

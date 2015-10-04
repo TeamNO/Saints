@@ -10,7 +10,7 @@ class Roster extends Application
     {
         $this->load->model('PlayerRoster'); 
         $this->load->view('Roster');
-        $this->data['players'] = $this->Playerroster->all();
+        $this->data['saintroster'] = $this->Playerroster->all();
         
         $this->render();
 		//$this->modelname->functionname() 
