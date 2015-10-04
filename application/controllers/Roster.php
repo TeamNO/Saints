@@ -8,8 +8,8 @@ class Roster extends Application
      */
     public function index()
     {
-        $this->load->model('PlayerRoster'); 
-        $this->load->view('Roster');
+        $this->data['pagebody'] = 'Rosterview';    // this is the view we want shown
+        $this->load->model('Playerroster'); 
         $this->data['saintroster'] = $this->Playerroster->all();
         
         $this->render();
