@@ -81,9 +81,27 @@ class Teams extends CI_Model {
         return null;
     }
     
+    /**
+     * Store a record of all teams based on conference.
+     * @param type $conf
+     * @return type
+     */
     public function get_conference($conf) {
         foreach($this->data as $record) {
             if($record['conf'] == $conf) {
+                return $record;
+            }
+        }
+    }
+    
+    /**
+     * Store a record of all teams based on division.
+     * @param type $div
+     * @return type
+     */
+    public function get_division($div) {
+        foreach($this->data as $record) {
+            if($record['div'] == $div) {
                 return $record;
             }
         }
