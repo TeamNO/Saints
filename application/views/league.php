@@ -10,7 +10,7 @@
 <div class="row">
     <div class="col-md-12 roster">
         <h1>All Teams in NFL</h1>
-        <table id="rostertable" class="display" cellspacing="0" width="100%">
+        <table id="leagues" class="display" cellspacing="0" width="100%">
            <tbody>
                <!-- This is where the roster model data is displayed. Will display all the players in the roster.-->
                 {teams}

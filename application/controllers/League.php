@@ -10,6 +10,9 @@ class League extends Application {
         parent::__construct();
     }
     
+    /**
+     * Display the league page and iterate over the teams data set.
+     */
     public function index()
     {
         $this->data['pagebody'] = 'league';
@@ -18,6 +21,7 @@ class League extends Application {
         foreach($source as $record) {
             $teams[] = array('id' => $record['id'], 'conf' => $record['conf'], 'div' => $record['div'], 'team' => $record['team']);
         }
+        //asort($teams);
         $this->data['teams'] = $teams;
         $this->render();
     }
