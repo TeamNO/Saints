@@ -47,13 +47,8 @@
   ('__proto__' in {} ? 'zepto' : 'jquery') +
   '.js><\/script>')
   </script>
-<script src="../../assets/js/jquery.js"></script>
-<script src="js/foundation.min.js"></script>
-<script>
-    $(document).foundation();
-  </script>
-<script src="../assets/js/templates/jquery.js"></script>
-<script src="../assets/js/templates/foundation.js"></script>
+<script src="../../assets/js/vendor/jquery.js"></script>
+<script src="../../assests/js/foundation.min.js"></script>
 <script>
       $(document).foundation();
 
