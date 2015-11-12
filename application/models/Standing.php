@@ -13,4 +13,7 @@
  */
 class Standing {
     //put your code here
+        function __construct() {
+        parent::__construct('standing', 'id');
+    }
 }

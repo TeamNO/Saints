@@ -14,6 +14,6 @@
 class Roster {
     //put your code here
      function __construct() {
-        parent::__construct('orders', 'num');
+        parent::__construct('roster', 'id');
     }
 }
