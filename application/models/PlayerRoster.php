@@ -17,4 +17,9 @@ class PlayerRoster extends My_Model{
         parent::__construct('roster', 'id');
     }
     
+    function all(){
+        $CI = &get_instance();
+        $query = $CI->db->get();
+        return $query->result();
+    }
 }
