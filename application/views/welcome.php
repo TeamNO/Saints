@@ -1,4 +1,4 @@
-<div class="row"> 
+<div style="text-align: center" class="row"> 
     <div class="large-9 columns" role="content">
             <h3><a href="#">Welcome to the New Orleans Saints</a></h3>      
                 <div class="row">
