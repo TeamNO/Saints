@@ -19,7 +19,7 @@ class PlayerRoster extends My_Model{
     
     function all(){
         $CI = &get_instance();
-        $query = $CI->db->get();
+        $query = $CI->db->get('roster');
         return $query->result();
     }
 }
