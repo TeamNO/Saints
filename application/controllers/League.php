@@ -16,13 +16,11 @@ class League extends Application {
     public function index()
     {
         $this->data['pagebody'] = 'league';
-        $source = $this->teams->get_all_teams();
-        $teams = array();
-        foreach($source as $record) {
-            $teams[] = array('id' => $record['id'], 'conf' => $record['conf'], 'div' => $record['div'], 'team' => $record['team']);
-        }
+        $this->load->model('PlayerRoster');
+        $source = $this->PlayerRoster->all();
+        
         //asort($teams);
-        $this->data['teams'] = $teams;
+        $this->data['teams'] = $source;
         $this->render();
     }
 }

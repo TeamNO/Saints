@@ -11,9 +11,10 @@
  *
  * @author a00860087
  */
-class Roster {
+class PlayerRoster extends My_Model{
     //put your code here
      function __construct() {
         parent::__construct('roster', 'id');
     }
+    
 }

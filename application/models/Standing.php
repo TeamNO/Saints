@@ -11,7 +11,7 @@
  *
  * @author a00860087
  */
-class Standing {
+class Standing extends My_Model{
     //put your code here
         function __construct() {
         parent::__construct('standing', 'id');
