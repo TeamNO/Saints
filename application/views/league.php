@@ -1,4 +1,4 @@
-<div class="large-9 columns" role="content">
+<div id="headtitle" class="large-9 columns" role="content">
     <article>
         <h3><a href="#">League Teams</a></h3>
         <div class="row">
