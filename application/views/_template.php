@@ -20,7 +20,7 @@
  
 <div class="row">
 <div class="large-12 columns">
-<div class="nav-bar right">
+<div class="nav-bar">
 <ul class="button-group">
 <li><a href='/' class="button">Home</a></li>
 <li><a href='roster' class="button">Roster</a></li>

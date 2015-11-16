@@ -58,8 +58,8 @@ body {
   font-size: 100%; }
 
 body {
-  background: #fff;
-  color: #222;
+  background: #000;
+  color: #ffd700;
   cursor: auto;
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-style: normal;
@@ -946,7 +946,8 @@ select {
     width: 91.66667%; }
 
   .large-12 {
-    width: 100%; }
+    width: 100%; 
+    text-align: center; }
 
   .large-offset-0 {
     margin-left: 0 !important; }
@@ -6324,5 +6325,15 @@ th.hide-for-touch {
     display: none !important; } }
 
 #headtitle {
+  width: 136%;
   text-align: center;
 }
+
+.names {
+  color: #ffd700;
+}
+
+.Button {
+  color: #ffd700;
+}
+
