@@ -1,5 +1,5 @@
 
-<div class="row">
+<div id="headtitle" class="row">
  
 <div class="large-9 columns" role="content">
 <article>
