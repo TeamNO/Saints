@@ -12,10 +12,10 @@
                                <!-- This is where the roster model data is displayed. Will display all the players in the roster.-->
                                 {teams}
                                     <tr>
-                                        <td>{id}</td>
-                                        <td>{conf}</td>
-                                        <td>{div}</td>
-                                        <td>{team}</td>
+                                        <td>{Id}</td>
+                                        <td>{Team}</td>
+                                        <td>{Conf}</td>
+                                        <td>{Division}</td>                                        
                                     </tr>
                                 {/teams}
                             </tbody>

@@ -16,4 +16,10 @@ class Standing extends My_Model{
         function __construct() {
         parent::__construct('standing', 'id');
     }
+
+    function all() {
+        $CI = &get_instance();
+        $query = $CI->db->get('standing');
+        return $query->result_array();
+    }
 }
