@@ -16,14 +16,13 @@
                <!-- This is where the roster model data is displayed. Will display all the players in the roster.-->
                 {saintroster}
                     <tr>
-                        <td>{#}</td>
-                        <td>{name}</td>
-                        <td>{pos}</td>
-                        <td>{ht}</td>
-                        <td>{wt}</td>
-                        <td>{age}</td>
-                        <td>{exp}</td>
-                        <td>{college}</td>
+                        <td>{Id}</td>
+                        <td>{Name}</td>
+                        <td>{Pos}</td>
+                        <td>{Height}</td>
+                        <td>{Weight}</td>
+                        <td>{Exp}</td>
+                        <td>{College}</td>
                     </tr>
                 {/saintroster}
             </tbody>

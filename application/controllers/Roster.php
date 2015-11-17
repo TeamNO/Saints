@@ -9,9 +9,9 @@ class Roster extends Application
     public function index()
     {
         $this->data['pagebody'] = 'rosterview';    // this is the view we want shown
-        $players = $this->playerroster->all();
-        $this->parser->parse('rosterview', $players);
-        $this->render();
-		
+        $roster = array();
+        $roster = $this->playerroster->all();
+        $this->data['saintroster'] = $roster;
+        $this->render();	
     }
 }
