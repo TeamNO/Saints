@@ -6337,3 +6337,7 @@ th.hide-for-touch {
   color: #ffd700;
 }
 
+.table_titles {
+  font-weight: bold;
+}
+
