@@ -10,6 +10,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Saints Team Roster</title>
+<img class="banner" src="/assets/img/saint_banner.jpg">
 <meta name="description" content="Documentation and reference library for ZURB Foundation. JavaScript, CSS, components, grid and more."/>
 <meta name="author" content="ZURB, inc. ZURB network also includes zurb.com"/>
 <meta name="copyright" content="ZURB, inc. Copyright (c) 2015"/>
@@ -31,7 +32,7 @@
 </div>
     
     {content} 
-    
+<hr/>
 <div class="large-6 columns">
 <ul class="inline-list right">
 <li><a href="/">Home</a></li>
