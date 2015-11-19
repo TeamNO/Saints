@@ -14,7 +14,7 @@
         <a href>ADD PLAYER</a>
         <table id="rostertable" border="1px" class="display" cellspacing="0" width="100%">
              <th border="1px">
-                <td class="table_titles">ID</td>
+                <td class="table_titles">JERSEY</td>
                 <td class="table_titles">NAME</td>
                 <td class="table_titles">POSITION</td>
                 <td class="table_titles">HEIGHT</td>
