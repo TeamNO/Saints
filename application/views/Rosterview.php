@@ -4,19 +4,17 @@
             <div class="col-md-12">
                 <a href>ADD PLAYER</a>
                 <table id="roster" border="1px" class="display" cellspacing="0" width="100%">
-                    <th border="1px">
-                    <td class="table_titles">JERSEY</td>
-                    <td class="table_titles">NAME</td>
-                    <td class="table_titles">POSITION</td>
-                    <td class="table_titles">HEIGHT</td>
-                    <td class="table_titles">WEIGHT</td>
-                    <td class="table_titles">EXP</td>
-                    <td class="table_titles">COLLEGE</td>
+                    <th>JERSEY</th>
+                    <th>NAME</th>
+                    <th>POSITION</th>
+                    <th>HEIGHT</th>
+                    <th>WEIGHT</th>
+                    <th>EXP</th>
+                    <th>COLLEGE</th>
                     <tbody>
                        <!-- This is where the roster model data is displayed. Will display all the players in the roster.-->
                         {saintroster}
                             <tr>
-                                <td></td>
                                 <td>{Id}</td>
                                 <td>{Name}</td>
                                 <td>{Pos}</td>
@@ -30,6 +28,9 @@
                         {/saintroster}
                     </tbody>
                 </table>
+                <div class="large-6 columns">
+                    {links}
+                </div>
             </div>
         </div>
     </div>

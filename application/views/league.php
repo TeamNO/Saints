@@ -3,16 +3,13 @@
         <div class="row">
             <div class="col-md-12">
                 <table id="leagues" border="1px" class="display" cellspacing="0" width="100%">
-                    <th border="1px">
-                    <td class="table_titles">ID</td>
-                    <td class="table_titles">TEAM</td>
-                    <td class="table_titles">CONFERENCE</td>
-                    <td class="table_titles">DIVISION</td>
-                    <tbody>
+                    <th>ID</th>
+                    <th>TEAM</th>
+                    <th>CONFERENCE</th>
+                    <th>DIVISION</th>
                        <!-- This is where the roster model data is displayed. Will display all the players in the roster.-->
                         {teams}
                             <tr>
-                                <td></td>
                                 <td>{Id}</td>
                                 <td>{Team}</td>
                                 <td>{Conf}</td>

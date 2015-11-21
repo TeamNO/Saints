@@ -7,6 +7,18 @@
         <meta name="copyright" content="ZURB, inc. Copyright (c) 2015"/>
         <link rel="stylesheet" href="../../assets/css/foundation.css"/>
         <script src="../../assets/js/modernizr.js"></script>
+        <script src="../../assets/js/vendor/jquery.js"></script>
+        <script src="../../assests/js/foundation.min.js"></script>
+        <script>
+            document.write('<script src=js/vendor/' +
+            ('__proto__' in {} ? 'zepto' : 'jquery') +
+            '.js><\/script>')
+        </script>
+        <script>
+            $(document).foundation();
+            var doc = document.documentElement;
+            doc.setAttribute('data-useragent', navigator.userAgent);
+        </script>
         <title>New Orleans Saints</title>
         <img class="banner" src="/assets/img/saint_banner.jpg">
     </head>
@@ -36,18 +48,5 @@
                 <p>&copy; Saints Team Roster</p>
             </div>
         </div>
-        <script>
-          document.write('<script src=js/vendor/' +
-          ('__proto__' in {} ? 'zepto' : 'jquery') +
-          '.js><\/script>')
-        </script>
-        <script src="../../assets/js/vendor/jquery.js"></script>
-        <script src="../../assests/js/foundation.min.js"></script>
-        <script>
-              $(document).foundation();
-
-              var doc = document.documentElement;
-              doc.setAttribute('data-useragent', navigator.userAgent);
-        </script>
     </body>
 </html>

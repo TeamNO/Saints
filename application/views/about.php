@@ -9,7 +9,7 @@
                 <h3 class="names">Vincent Huang</h3>
                 <p>Hello! I'm Vincent and this is our project for Comp4711.</p>
                 <h3 class="names">Ignacio Marquez</h3>
-                <p>Bonjour je suis Igncaio! I am not a French-speaking Canadian.
+                <p>Bonjour je suis Ignacio! I am not a French-speaking Canadian.
                 <h3 class="names">Kevin Thet</h3>
                 <p>Hola soy Kevin! I will offer you two choices: Plata o Plomo.
             </div>

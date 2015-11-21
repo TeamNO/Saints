@@ -23,8 +23,9 @@ class Roster extends Application
 
         //$data['saintroster'] = $this->playerroster->fetch_players($config['per_page'], $page);
         $roster = $this->playerroster->fetch_players($config['per_page'], $page);
-        echo $this->pagination->create_links();
+        $str_links = $this->pagination->create_links();
         $this->data['saintroster'] = $roster;
+        $this->data['links'] = $str_links;
         $this->render();
 
         //$roster = array();
