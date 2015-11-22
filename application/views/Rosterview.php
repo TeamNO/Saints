@@ -28,9 +28,9 @@
                         {/saintroster}
                     </tbody>
                 </table>
-                <div class="large-6 columns">
-                    {links}
-                </div>
+                <ul class="tsc_pagination tsc_paginationA tsc_paginationA01">
+                    {pagination_links}
+                </ul>
             </div>
         </div>
     </div>
