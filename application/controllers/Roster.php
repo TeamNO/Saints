@@ -50,6 +50,5 @@ class Roster extends Application
         //$roster = $this->playerroster->all();
         //$this->data['saintroster'] = $roster;
         //$this->render();	
-        //faosdlkfjlaksjflkjasl
     }
 }
