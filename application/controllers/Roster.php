@@ -46,7 +46,7 @@ class Roster extends Application
         $this->data['pagination_links'] = $str_links;
         $this->render();
 		
-		public function create()
+		function create()
 		{
 			$player = new stdClass();
 			$player->Id = 0;
@@ -62,7 +62,7 @@ class Roster extends Application
 			$this->edit(null, $player);
 		}
 
-		public function edit($id = null, $changes = null)
+		function edit($id = null, $changes = null)
 		{
 			$this->data['pagebody'] = 'roster/edit';
 			$this->data['title'] = 'Team Roster - Edit Player';
@@ -86,7 +86,7 @@ class Roster extends Application
 			$this->render();
 		}
 		
-		public function delete($id)
+		function delete($id)
 		{
 			$player = $this->roster_model->get($id);
 			$this->roster_model->delete($id);
