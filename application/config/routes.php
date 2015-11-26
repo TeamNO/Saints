@@ -52,5 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //Routed the default controller to the roster page because we decided on using roster as the default page for now.
 $route['default_controller'] = 'welcome';
 $route['roster/index/league'] = 'league';
+$route['roster/index/roster'] = 'roster';
+$route['roster/index/about'] = 'about';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
