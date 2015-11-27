@@ -28,10 +28,10 @@
                 <div class="nav-bar">
                     <ul class="button-group">
                         <li><a href='/' class="button">Home</a></li>
-                        <li><a href='roster' class="button">Roster</a></li>
-                        <li><a href='league' class="button">League</a></li>
-                        <li><a href='admin' class="button">CRUD</a></li>
-                        <li><a href='about' class="button">About</a></li>
+                        <li><a href='/roster' class="button">Roster</a></li>
+                        <li><a href='/league' class="button">League</a></li>
+                        <li><a href='/admin' class="button">CRUD</a></li>
+                        <li><a href='/about' class="button">About</a></li>
                     </ul>
                 </div>
                     {content} 
@@ -39,10 +39,10 @@
                 <div class="large-6 columns">
                     <ul class="inline-list right">
                         <li><a href="/">Home</a></li>
-                        <li><a href="roster">Roster</a></li>
-                        <li><a href="league">League</a></li>
-                        <li><a href='admin'>CRUD</a></li>
-                        <li><a href="about">About</a></li>
+                        <li><a href="/roster">Roster</a></li>
+                        <li><a href="/league">League</a></li>
+                        <li><a href='/admin'>CRUD</a></li>
+                        <li><a href="/about">About</a></li>
                     </ul>
                 </div>
                 <p>&copy; Saints Team Roster</p>
