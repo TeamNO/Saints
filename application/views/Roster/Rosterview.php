@@ -2,7 +2,7 @@
     <div class="large-9 columns" role="content">
         <div class="row">
             <div class="col-md-12">
-                <a href>ADD PLAYER</a>
+                <a href="/roster/create" >Add Player</a>
                 <table id="roster" border="1px" class="display" cellspacing="0" width="100%">
                     <th>JERSEY</th>
                     <th>NAME</th>
@@ -15,7 +15,7 @@
                        <!-- This is where the roster model data is displayed. Will display all the players in the roster.-->
                         {saintroster}
                             <tr>
-                                <td>{Id}</td>
+                                <td>{Number}</td>
                                 <td>{Name}</td>
                                 <td>{Pos}</td>
                                 <td>{Height}</td>

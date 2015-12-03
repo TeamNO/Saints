@@ -8,7 +8,7 @@ class Roster extends Application
      */
     public function index()
     {
-        $this->data['pagebody'] = 'rosterview';    // this is the view we want show
+        $this->data['pagebody'] = 'roster/rosterview';    // this is the view we want show
 
         // setting up pagination
         $config = array();
@@ -44,60 +44,114 @@ class Roster extends Application
         $str_links = $this->pagination->create_links();
         $this->data['saintroster'] = $roster;
         $this->data['pagination_links'] = $str_links;
+        
+        
         $this->render();
-		
-        function create()
-        {
-                $player = new stdClass();
-                $player->Id = 0;
-                $player->Number = '';
-                $player->Name = '';
-                $player->Pos = '';
-                $player->Status = '';
-                $player->Height = '';
-                $player->Weight = '';
-                $player->Birthdate = '';
-                $player->Exp = '';
-                $player->College = '';
-                $this->edit(null, $player);
+    }	
+    
+    public function show($id)
+    {
+        $player = $this->playerroster->get($id);
+
+        $this->data['pagebody'] = 'roster/show';
+        $this->data['title'] = 'Team Roster - ' . $player->Name;
+
+        foreach ($player as $key => $val) {
+            $this->data[$key] = $val;
+        }
+        $this->render();
+    }
+    function create()
+    {
+            $player = new stdClass();
+            $player->Id = 0;
+            $player->Number = '';
+            $player->Name = '';
+            $player->Pos = '';
+            $player->Status = '';
+            $player->Height = '';
+            $player->Weight = '';
+            $player->Birthdate = '';
+            $player->Exp = '';
+            $player->College = '';
+            $this->edit(null, $player);
+    }
+
+    function edit($id = null, $changes = null)
+    {
+            $this->data['pagebody'] = 'roster/edit';
+            $this->data['title'] = 'Team Roster - Edit Player';
+            $this->data['errors'] = array();
+            $this->data['error_message'] = '';
+
+
+            if ($changes == null)
+                    $player = $this->playerroster->get($id);
+            else
+                    $player = $changes;
+
+            if ($player == null) {
+                    $this->load->view('roster');
+                    return;
+            }
+            foreach ($player as $key => $val) {
+                    $this->data[$key] = $val;
+            }
+
+            $this->render();
+    }
+     public function save($id)
+    {
+        // If no id specified, display error
+        if ($id == null) {
+            $this->load->view('error');
+            return;
         }
 
-        function edit($id = null, $changes = null)
-        {
-                $this->data['pagebody'] = 'roster/edit';
-                $this->data['title'] = 'Team Roster - Edit Player';
-                $this->data['errors'] = array();
-                $this->data['error_message'] = '';
+        $player = null;
 
-
-                if ($changes == null)
-                        $player = $this->roster_model->get($id);
-                else
-                        $player = $changes;
-
-                if ($player == null) {
-                        $this->load->view('roster');
-                        return;
-                }
-                foreach ($player as $key => $val) {
-                        $this->data[$key] = $val;
-                }
-
-                $this->render();
+        if ((int)$id == 0) {
+            $player = $this->playerroster->create();
+        } else {
+            $player = $this->playerroster->get($id);
         }
 
-        function delete($id)
-        {
-                $player = $this->roster_model->get($id);
-                $this->roster_model->delete($id);
-                $this->session->deleteconfirm = $player->Name . ' has been deleted.';
-                unlink(getcwd() . '/assets/img/players/' . $id . '.png');
-                redirect($_SERVER['HTTP_REFERER']);
+        // Get all fields assigned to player and check for empties
+        $emptyFields = array();
+        foreach($this->input->post() as $key => $val) {
+            if (empty($val))
+                $emptyFields[] = array('field' => $key);
+            $player->{$key} = $val;
         }
+
+        // Make sure all fields were filled out
+        if (!empty($emptyFields)) {
+            $this->edit(null, $player, $emptyFields);
+        }
+
+        // Either save or update
+        if ((int)$id == 0) {
+            $this->playerroster->add($player);
+            if ($this->input->post('photo') === null) {
+                copy(getcwd() . '/assets/img/players/0.png', getcwd() . '/assets/img/players/' . $this->db->insert_id() . '.png');
+            }
+            $this->show($this->db->insert_id());
+        } else {
+            $this->playerroster->update($player);
+            $this->show($id);
+        }
+    }
+    function delete($id)
+    {
+            $player = $this->playerroster->get($id);
+            $this->playerroster->delete($id);
+            $this->session->deleteconfirm = $player->Name . ' has been deleted.';
+            unlink(getcwd() . '/assets/img/players/' . $id . '.png');
+            redirect($_SERVER['HTTP_REFERER']);
+    }
 		
         //$roster = array();
         //$roster = $this->playerroster->all();
         //$this->data['saintroster'] = $roster;
         //$this->render();	
-    }
 }

@@ -13,9 +13,25 @@
  */
 class PlayerRoster extends MY_Model{
     //put your code here
-     function __construct() {
-        parent::__construct('roster', 'id');
+    function __construct() {
+        parent::__construct('roster', 'Id');
     }
+
+    /**
+     * Returns a segment of records
+     */
+    function get_roster_range($offset, $start) {
+        $query = $this->db->get('roster', $offset, $start);
+        return $query->result_array();
+    }
+
+    /**
+     * Returns total amount of roster rows in db
+     */
+    function count() {
+        return $this->db->get('roster')->num_rows();
+    }
+
     
     function all(){
         $CI = &get_instance();
