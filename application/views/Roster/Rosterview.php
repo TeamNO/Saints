@@ -2,17 +2,12 @@
     <div class="large-9 columns" role="content">
         <div class="row">
             <div class="col-md-12">
-<<<<<<< HEAD:application/views/Rosterview.php
             <p>Order By...</p>
             <select name="orderbox" id="orderbox" onchange="this.form.submit()">
                 <option value="name">Name</option>
                 <option value="jersey">Jersey</option>
                 <option value="position">Position</option>
             </select>
-                <a href>ADD PLAYER</a>
-=======
-                <a href="/roster/create" >Add Player</a>
->>>>>>> upstream/develop:application/views/Roster/Rosterview.php
                 <table id="roster" border="1px" class="display" cellspacing="0" width="100%">
                     <th>JERSEY</th>
                     <th>NAME</th>
@@ -25,7 +20,7 @@
                        <!-- This is where the roster model data is displayed. Will display all the players in the roster.-->
                         {saintroster}
                             <tr>
-                                <td>{Number}</td>
+                                <td>{Id}</td>
                                 <td>{Name}</td>
                                 <td>{Pos}</td>
                                 <td>{Height}</td>

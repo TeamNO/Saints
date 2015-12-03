@@ -62,11 +62,12 @@ class Roster extends Application
 
         $this->data['pagebody'] = 'roster/show';
         $this->data['title'] = 'Team Roster - ' . $player->Name;
+    }
 
-        function order($type)
-		{
-			$this->db->order_by(type, 'asc');
-		}
+    function order($type)
+	{
+		$this->db->order_by(type, 'asc');
+	}
 		
     function create()
     {
@@ -107,7 +108,7 @@ class Roster extends Application
 
             $this->render();
     }
-     public function save($id)
+    function save($id)
     {
         // If no id specified, display error
         if ($id == null) {
