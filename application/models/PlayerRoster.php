@@ -28,8 +28,9 @@ class PlayerRoster extends MY_Model{
     	return $CI->db->count_all('roster');
     }
 
-    function fetch_players($limit, $start) {
+    function fetch_players($limit, $start, $type) {
     	$CI = &get_instance();
+        $CI->db->order_by($type, 'asc');
     	$CI->db->limit($limit, $start);
     	$query = $CI->db->get('roster');
 

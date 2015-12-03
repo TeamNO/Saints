@@ -2,6 +2,12 @@
     <div class="large-9 columns" role="content">
         <div class="row">
             <div class="col-md-12">
+            <p>Order By...</p>
+            <select name="orderbox" id="orderbox" onchange="this.form.submit()">
+                <option value="name">Name</option>
+                <option value="jersey">Jersey</option>
+                <option value="position">Position</option>
+            </select>
                 <a href>ADD PLAYER</a>
                 <table id="roster" border="1px" class="display" cellspacing="0" width="100%">
                     <th>JERSEY</th>

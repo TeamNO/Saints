@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Roster extends Application
 {
+	public function __construct() 
+	{
+        parent::__construct();
+        $this->load->library('session');
+    }
+
     /**
      * Controller for the roster page
      */
@@ -40,11 +46,17 @@ class Roster extends Application
         $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
         //$data['saintroster'] = $this->playerroster->fetch_players($config['per_page'], $page);
-        $roster = $this->playerroster->fetch_players($config['per_page'], $page);
+        $ordered = $this->input->post('orderbox');
+        $roster = $this->playerroster->fetch_players($config['per_page'], $page, $ordered);
         $str_links = $this->pagination->create_links();
         $this->data['saintroster'] = $roster;
         $this->data['pagination_links'] = $str_links;
         $this->render();
+
+        function order($type)
+		{
+			$this->db->order_by(type, 'asc');
+		}
 		
 		function create()
 		{
@@ -94,10 +106,5 @@ class Roster extends Application
 			unlink(getcwd() . '/assets/img/players/' . $id . '.png');
 			redirect($_SERVER['HTTP_REFERER']);
 		}
-		
-        //$roster = array();
-        //$roster = $this->playerroster->all();
-        //$this->data['saintroster'] = $roster;
-        //$this->render();	
     }
 }
