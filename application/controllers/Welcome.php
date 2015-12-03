@@ -19,6 +19,13 @@ class Welcome extends Application {
     public function index()
     {
         $this->data['pagebody'] = 'welcome';
-        $this->render();
+        $league = array();
+        $league = $this->standing->all();
+        $this->data['leagueteams'] = $league;
+        $this->render();  
+    }
+    public function predict()
+    {
+        
     }
 }
