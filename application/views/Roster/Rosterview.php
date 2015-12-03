@@ -4,9 +4,9 @@
             <div class="col-md-12">
             <p>Order By...</p>
             <select name="orderbox" id="orderbox" onchange="this.form.submit()">
-                <option value="name">Name</option>
-                <option value="jersey">Jersey</option>
-                <option value="position">Position</option>
+                <option value="name">name</option>
+                <option value="jersey">jersey</option>
+                <option value="position">position</option>
             </select>
                 <table id="roster" border="1px" class="display" cellspacing="0" width="100%">
                     <th>JERSEY</th>

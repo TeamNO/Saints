@@ -63,12 +63,7 @@ class Roster extends Application
         $this->data['pagebody'] = 'roster/show';
         $this->data['title'] = 'Team Roster - ' . $player->Name;
     }
-
-    function order($type)
-	{
-		$this->db->order_by(type, 'asc');
-	}
-		
+    
     function create()
     {
             $player = new stdClass();
