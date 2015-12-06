@@ -6,7 +6,6 @@ class Roster extends Application
 	public function __construct() 
 	{
         parent::__construct();
-        $this->load->library('session');
     }
 
     /**
@@ -45,9 +44,7 @@ class Roster extends Application
 
         $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-        //$data['saintroster'] = $this->playerroster->fetch_players($config['per_page'], $page);
-        $ordered = $this->input->post('orderbox');
-        $roster = $this->playerroster->fetch_players($config['per_page'], $page, $ordered);
+        $roster = $this->playerroster->fetch_players($config['per_page'], $page);
         $str_links = $this->pagination->create_links();
         $this->data['saintroster'] = $roster;
         $this->data['pagination_links'] = $str_links;
@@ -62,6 +59,10 @@ class Roster extends Application
 
         $this->data['pagebody'] = 'roster/show';
         $this->data['title'] = 'Team Roster - ' . $player->Name;
+    }
+
+    function order($type) {
+
     }
     
     function create()

@@ -6,19 +6,18 @@
                 <div>
                     <form>
                         <h3 style="color:white">Opposing Teams</h3>
-                        <select name="leagueteams" id="leagueteams">{leagueteams}<option value="{TLC}">{Team}{/leagueteams}</option>{/leagueteams}</select>
+                            <select name="leagueteams" id="leagueteams">
+                            {leagueteams}
+                                <option value="{TLC}">{Team}</option>
+                            {/leagueteams}
+                            </select>
                         <br>
-                        <button type="submit" id="predictButton">pR3DAICIT!</button>
-                        <script>
-                            function predict(){
-                                
-                            }
-                        </script>
+                        <button type="submit" id="predictButton">Predict!</button>
                         <br>
                     </form>
                 </div>
-                <div id="predictionDiv">
-                    <p> predictions go here</p>
+                <div>
+                    <p id="predictionP"> predictions go here</p>
                 </div>
                 <p>Here you will find information about the team as well as the league!</p>
             </div>
