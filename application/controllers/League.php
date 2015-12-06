@@ -15,11 +15,41 @@ class League extends Application {
      */
     public function index()
     {
-        $this->data['pagebody'] = 'league';
+        $this->data['pagebody'] = 'league/league';
 
         $league = array();
         $league = $this->standing->all();
         $this->data['teams'] = $league;
         $this->render();    
+    }
+
+    public function conference() {
+        $this->data['pagebody'] = 'league/conference';
+        $afc = $this->standing->conference('AFC');
+        $nfc = $this->standing->conference('NFC');
+        $this->data['afcteams'] = $afc;
+        $this->data['nfcteams'] = $nfc;
+        $this->render();
+    }
+
+    public function division() {
+        $this->data['pagebody'] = 'league/division';
+        $afceast = $this->standing->division('AFC', 'East');
+        $afcnorth = $this->standing->division('AFC', 'North');
+        $afcsouth = $this->standing->division('AFC', 'South');
+        $afcwest = $this->standing->division('AFC', 'West');
+        $nfceast = $this->standing->division('NFC', 'East');
+        $nfcnorth = $this->standing->division('NFC', 'North');
+        $nfcsouth = $this->standing->division('NFC', 'South');
+        $nfcwest = $this->standing->division('NFC', 'West');
+        $this->data['afceast'] = $afceast;
+        $this->data['afcnorth'] = $afcnorth;
+        $this->data['afcsouth'] = $afcsouth;
+        $this->data['afcwest'] = $afcwest;
+        $this->data['nfceast'] = $nfceast;
+        $this->data['nfcnorth'] = $nfcnorth;
+        $this->data['nfcsouth'] = $nfcsouth;
+        $this->data['nfcwest'] = $nfcwest;
+        $this->render();
     }
 }

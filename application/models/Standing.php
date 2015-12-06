@@ -22,4 +22,16 @@ class Standing extends My_Model{
         $query = $CI->db->get('standing');
         return $query->result_array();
     }
+
+    function conference($conf) {
+    	$CI = &get_instance();
+    	$query = $CI->db->query("SELECT * FROM standing WHERE cName = '$conf';");
+    	return $query->result_array();
+    }
+
+    function division($conf, $div) {
+    	$CI = &get_instance();
+    	$query = $CI->db->query("SELECT * FROM standing WHERE cName = '$conf' AND dName = '$div';");
+    	return $query->result_array();
+    }
 }

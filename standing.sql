@@ -1,54 +1,57 @@
 DROP TABLE IF EXISTS standing;
 CREATE TABLE standing(
-   Id       INTEGER  NOT NULL PRIMARY KEY 
-  ,Team     VARCHAR(21) NOT NULL
-  ,W        INTEGER  NOT NULL
-  ,L        INTEGER  NOT NULL
-  ,T        BIT  NOT NULL
-  ,Pct_1    DECIMAL(5,3) NOT NULL
-  ,PF       INTEGER  NOT NULL
-  ,PA       DATE  NOT NULL
-  ,Net_Pts  INTEGER  NOT NULL
-  ,TD       INTEGER  NOT NULL
-  ,Home     VARCHAR(6) NOT NULL
-  ,Road     VARCHAR(6) NOT NULL
-  ,Division      VARCHAR(6) NOT NULL
-  ,Pct_2    DECIMAL(5,3) NOT NULL
-  ,Conf     VARCHAR(6) NOT NULL
-  ,NonConf  VARCHAR(6) NOT NULL
-  ,Streak   VARCHAR(3) NOT NULL
-  ,Last_5   VARCHAR(6) NOT NULL
-  ,TLC		VARCHAR(3) NOT NULL
+	Id 			INTEGER 		NOT NULL 	PRIMARY KEY
+	,cName 		VARCHAR(30) 	NOT NULL
+	,dName		VARCHAR(30) 	NOT NULL
+	,Team		VARCHAR(30) 	NOT NULL
+	,W			VARCHAR(30) 	NOT NULL
+	,L			VARCHAR(30) 	NOT NULL
+	,T	 		VARCHAR(30) 	NOT NULL
+	,oPct		VARCHAR(30) 	NOT NULL
+	,PF			VARCHAR(30) 	NOT NULL
+	,PA			VARCHAR(30) 	NOT NULL
+	,Net 		VARCHAR(30) 	NOT NULL
+	,TD			VARCHAR(30) 	NOT NULL
+	,Home		VARCHAR(30) 	NOT NULL
+	,Road		VARCHAR(30) 	NOT NULL
+	,Division	VARCHAR(30) 	NOT NULL
+	,dPct		VARCHAR(30) 	NOT NULL
+	,Conf		VARCHAR(30) 	NOT NULL
+	,cPct		VARCHAR(30) 	NOT NULL
+	,NonConf	VARCHAR(30) 	NOT NULL
+	,Streak		VARCHAR(30) 	NOT NULL
+	,Last5 		VARCHAR(30) 	NOT NULL
+	,TLC		VARCHAR(30)		NOT NULL
 );
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (1,'New England Patriots',8,0,0,1,276,'5/22/1900',133,31,'May-00','Mar-00','Mar-00',1,'Jun-00','Feb-00','8W','May-00','NE');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (2,'New York Jets',5,3,0,0.625,200,'6/10/1900',38,23,'1-Mar','2-Feb','1-Jan',0.5,'2-Apr','1-Jan','1W','2-Mar','NYJ');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (3,'Buffalo Bills',4,4,0,0.5,209,'7/8/1900',19,26,'3-Feb','1-Feb','1-Feb',0.667,'3-Apr','0-1','1W','3-Feb','BUF');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (4,'Miami Dolphins',3,5,0,0.375,171,'7/24/1900',-35,22,'2-Jan','3-Feb','0-4',0,'5-Feb','Jan-00','2L','3-Feb','MIA');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (5,'Cincinnati Bengals',8,0,0,1,229,'5/21/1900',87,28,'Apr-00','Apr-00','Mar-00',1,'Jul-00','Jan-00','8W','May-00','CIN');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (6,'Pittsburgh Steelers',5,4,0,0.556,206,'6/30/1900',24,22,'2-Mar','2-Feb','0-2',0,'4-Feb','Mar-00','1W','2-Mar','PIT');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (7,'Baltimore Ravens',2,6,0,0.25,190,'8/1/1900',-24,19,'2-Jan','4-Jan','2-Jan',0.333,'4-Feb','0-2','1W','3-Feb','BAL');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (8,'Cleveland Browns',2,7,0,0.222,177,'9/3/1900',-70,19,'3-Jan','4-Jan','1-Jan',0.5,'5-Feb','0-2','4L','4-Jan','CLE');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (9,'Indianapolis Colts',4,5,0,0.444,200,'8/14/1900',-27,24,'3-Feb','2-Feb','Mar-00',1,'3-Apr','0-2','1W','3-Feb','IND');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (10,'Houston Texans',3,5,0,0.375,174,'7/23/1900',-31,21,'2-Feb','3-Jan','1-Feb',0.667,'3-Feb','2-Jan','1W','3-Feb','HOU');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (11,'Jacksonville Jaguars',2,6,0,0.25,170,'8/22/1900',-65,20,'2-Feb','0-4','0-2',0,'4-Feb','0-2','1L','4-Jan','JAC');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (12,'Tennessee Titans',2,6,0,0.25,159,'7/5/1900',-28,19,'0-4','2-Feb','0-2',0,'0-5','1-Feb','1W','4-Jan','TEN');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (13,'Denver Broncos',7,1,0,0.875,192,'5/18/1900',53,19,'Mar-00','1-Apr','Feb-00',1,'1-Apr','Mar-00','1L','1-Apr','DEN');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (14,'Oakland Raiders',4,4,0,0.5,213,'7/29/1900',2,25,'2-Feb','2-Feb','1-Jan',0.5,'3-Apr','0-1','1L','3-Feb','OAK');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (15,'Kansas City Chiefs',3,5,0,0.375,195,'6/30/1900',13,21,'2-Feb','3-Jan','0-1',0,'2-Feb','3-Jan','2W','3-Feb','KC');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (16,'San Diego Chargers',2,7,0,0.222,210,'9/5/1900',-39,23,'3-Feb','0-4','0-1',0,'4-Jan','3-Jan','5L','0-5','SD');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (17,'New York Giants',5,4,0,0.556,247,'8/13/1900',21,27,'1-Mar','3-Feb','2-Feb',0.5,'4-Apr','Jan-00','1W','2-Mar','NYG');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (18,'Philadelphia Eagles',4,4,0,0.5,193,'6/12/1900',29,22,'1-Feb','3-Feb','2-Feb',0.5,'4-Mar','Jan-00','1W','2-Mar','PHI');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (19,'Washington Redskins',3,5,0,0.375,158,'7/13/1900',-37,17,'1-Mar','0-4','1-Jan',0.5,'2-Mar','0-3','1L','3-Feb','WAS');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (20,'Dallas Cowboys',2,6,0,0.25,160,'7/22/1900',-44,16,'4-Jan','2-Jan','2-Feb',0.5,'5-Feb','0-1','6L','0-5','DAL');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (21,'Green Bay Packers',6,2,0,0.75,203,'6/15/1900',36,24,'Apr-00','2-Feb','Jan-00',1,'1-Apr','1-Feb','2L','2-Mar','GB');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (22,'Minnesota Vikings',6,2,0,0.75,168,'5/19/1900',28,16,'Apr-00','2-Feb','Mar-00',1,'1-Apr','1-Feb','4W','1-Apr','MIN');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (23,'Chicago Bears',3,5,0,0.375,162,'8/8/1900',-59,16,'3-Jan','2-Feb','0-3',0,'0-5','Mar-00','1W','2-Mar','CHI');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (24,'Detroit Lions',1,7,0,0.125,149,'9/1/1900',-96,18,'3-Jan','0-4','2-Jan',0.333,'4-Jan','0-3','2L','4-Jan','DET');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (25,'Carolina Panthers',8,0,0,1,228,'6/13/1900',63,26,'May-00','Mar-00','Feb-00',1,'May-00','Mar-00','8W','May-00','CAR');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (26,'Atlanta Falcons',6,3,0,0.667,229,'7/8/1900',39,27,'1-Mar','2-Mar','0-2',0,'3-Apr','Feb-00','2L','3-Feb','ATL');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (27,'New Orleans Saints',4,5,0,0.444,241,'9/24/1900',-27,31,'2-Mar','3-Jan','2-Jan',0.333,'4-Mar','1-Jan','1L','2-Mar','NO');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (28,'Tampa Bay Buccaneers',3,5,0,0.375,181,'8/18/1900',-50,18,'3-Jan','2-Feb','1-Feb',0.667,'3-Feb','2-Jan','1L','3-Feb','TB');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (29,'Arizona Cardinals',6,2,0,0.75,263,'6/1/1900',110,32,'1-Mar','1-Mar','1-Jan',0.5,'1-Apr','1-Feb','2W','2-Mar','ARI');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (30,'St. Louis Rams',4,4,0,0.5,153,'5/25/1900',7,16,'1-Mar','3-Jan','Mar-00',1,'3-Mar','1-Jan','1L','2-Mar','STL');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (31,'Seattle Seahawks',4,4,0,0.5,167,'5/19/1900',27,16,'1-Feb','3-Feb','1-Jan',0.5,'3-Apr','0-1','2W','2-Mar','SEA');
-INSERT INTO standing(Id,Team,W,L,T,Pct_1,PF,PA,Net_Pts,TD,Home,Road,Division,Pct_2,Conf,NonConf,Streak,Last_5,TLC) VALUES (32,'San Francisco 49ers',3,6,0,0.333,126,'8/10/1900',-97,12,'2-Mar','0-4','0-3',0,'5-Feb','1-Jan','1W','3-Feb','SF');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (1,'AFC','East','New England Patriots','10','1','0','.909','347','212','135','39','6-0','4-1','4-0','1.000','7-1','.875','3-0','--','0-0','NE');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (2,'AFC','East','New York Jets','6','5','0','.545','272','228','44','32','4-2','2-3','2-2','.500','5-4','.556','1-1','--','0-0','NYJ');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (3,'AFC','East','Buffalo Bills','5','6','0','.455','266','257','9','32','2-3','3-3','3-2','.600','5-5','.500','0-1','--','0-0','BUF');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (4,'AFC','East','Miami Dolphins','4','7','0','.364','225','287','-62','29','1-3','3-4','0-5','.000','2-6','.250','2-1','--','0-0','MIA');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (5,'AFC','North','Cincinnati Bengals','9','2','0','.818','297','193','104','36','5-1','4-1','3-0','1.000','7-1','.875','2-1','--','0-0','CIN');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (6,'AFC','North','Pittsburgh Steelers','6','5','0','.545','266','230','36','28','4-2','2-3','1-2','.333','3-4','.429','3-1','--','0-0','PIT');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (7,'AFC','North','Baltimore Ravens','4','7','0','.364','259','276','-17','27','2-3','2-4','2-2','.500','3-5','.375','1-2','--','0-0','BAL');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (8,'AFC','North','Cleveland Browns','2','9','0','.182','213','310','-97','23','1-4','1-5','1-3','.250','2-7','.222','0-2','--','0-0','CLE');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (9,'AFC','South','Houston Texans','6','5','0','.545','232','234','-2','28','4-2','2-3','2-1','.667','4-3','.571','2-2','--','0-0','HOU');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (10,'AFC','South','Indianapolis Colts','6','5','0','.545','249','260','-11','29','3-3','3-2','3-0','1.000','4-3','.571','2-2','--','0-0','IND');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (11,'AFC','South','Jacksonville Jaguars','4','7','0','.364','236','299','-63','25','3-3','1-4','1-2','.333','4-5','.444','0-2','--','0-0','JAC');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (12,'AFC','South','Tennessee Titans','2','9','0','.182','203','257','-54','24','0-6','2-3','0-3','.000','0-7','.000','2-2','--','0-0','TEN');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (13,'AFC','West','Denver Broncos','9','2','0','.818','252','207','45','27','4-1','5-1','2-1','.667','5-2','.714','4-0','--','0-0','DEN');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (14,'AFC','West','Kansas City Chiefs','6','5','0','.545','287','220','67','30','3-2','3-3','2-1','.667','5-2','.714','1-3','--','0-0','KC');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (15,'AFC','West','Oakland Raiders','5','6','0','.455','264','280','-16','31','2-3','3-3','1-1','.500','5-3','.625','0-3','--','0-0','OAK');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (16,'AFC','West','San Diego Chargers','3','8','0','.273','244','307','-63','27','2-4','1-4','0-2','.000','2-5','.286','1-3','--','0-0','SD');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (17,'NFC','East','New York Giants','5','6','0','.455','287','273','14','31','3-2','2-4','2-3','.400','4-5','.444','1-1','--','0-0','NYG');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (18,'NFC','East','Washington Redskins','5','6','0','.455','241','267','-26','26','5-1','0-5','2-1','.667','5-3','.625','0-3','--','0-0','WAS');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (19,'NFC','East','Philadelphia Eagles','4','7','0','.364','243','274','-31','28','2-3','2-4','2-2','.500','3-6','.333','1-1','--','0-0','PHI');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (20,'NFC','East','Dallas Cowboys','3','8','0','.273','204','261','-57','20','1-5','2-3','2-2','.500','2-7','.222','1-1','--','0-0','DAL');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (21,'NFC','North','Minnesota Vikings','8','3','0','.727','231','194','37','23','4-1','4-2','3-1','.750','5-2','.714','3-1','--','0-0','MIN');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (22,'NFC','North','Green Bay Packers','8','4','0','.667','289','238','51','33','4-2','4-2','3-2','.600','6-3','.667','2-1','--','0-0','GB');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (23,'NFC','North','Chicago Bears','5','6','0','.455','231','264','-33','23','1-4','4-2','1-3','.250','2-5','.286','3-1','--','0-0','CHI');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (24,'NFC','North','Detroit Lions','4','8','0','.333','253','315','-62','29','3-4','1-4','2-3','.400','3-5','.375','1-3','--','0-0','DET');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (25,'NFC','South','Carolina Panthers','11','0','0','1.000','332','205','127','37','6-0','5-0','2-0','1.000','7-0','1.000','4-0','--','0-0','CAR');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (26,'NFC','South','Atlanta Falcons','6','5','0','.545','260','234','26','31','3-3','3-2','0-2','.000','4-4','.500','2-1','--','0-0','ATL');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (27,'NFC','South','Tampa Bay Buccaneers','5','6','0','.455','248','279','-31','26','2-3','3-3','2-1','.667','4-3','.571','1-3','--','0-0','TB');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (28,'NFC','South','New Orleans Saints','4','7','0','.364','261','339','-78','33','3-2','1-5','1-2','.333','3-5','.375','1-2','--','0-0','NO');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (29,'NFC','West','Arizona Cardinals','9','2','0','.818','355','229','126','42','4-1','5-1','3-1','.750','6-1','.857','3-1','--','0-0','ARI');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (30,'NFC','West','Seattle Seahawks','6','5','0','.545','267','222','45','30','4-2','2-3','2-2','.500','5-4','.556','1-1','--','0-0','SEA');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (31,'NFC','West','St. Louis Rams','4','7','0','.364','186','230','-44','20','3-2','1-5','3-0','1.000','3-4','.429','1-3','--','0-0','STL');
+INSERT INTO standing (Id,cName,dName,Team,W,L,T,oPct,PF,PA,Net,TD,Home,Road,Division,dPct,Conf,cPct,NonConf,Streak,Last5,TLC) VALUES (32,'NFC','West','San Francisco 49ers','3','8','0','.273','152','271','-119','14','3-3','0-5','0-5','.000','2-7','.222','1-1','--','0-0','SF');
