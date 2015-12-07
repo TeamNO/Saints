@@ -10,20 +10,11 @@
 * The league database and it's functions
 */
 class Standing extends My_Model{
+    //put your code here
         function __construct() {
         parent::__construct('standing', 'id');
-        // connect to xmlrpc server
-        $this->xmlrpc->server("nfl.jlparry.com/rpc");
-        $request = array('20150830');
-        $this->xmlrpc->request($request);
-        $this->xmlrpc->method('since');
-        if(!$this->xmlrpc->send_request()) {
-            echo $this->xmlrpc->display_error();
-        } else {
-            $this->xmlresult = $this->xmlrpc->display_response();
-        }
     }
-
+    
     /**
     * Get all teams in league.
     */
