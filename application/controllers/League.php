@@ -17,7 +17,6 @@ class League extends Application {
     {
         $this->data['pagebody'] = 'league/league';
 
-        $league = array();
         $league = $this->standing->all();
         $this->data['teams'] = $league;
         $this->render();    
