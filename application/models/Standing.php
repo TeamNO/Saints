@@ -15,6 +15,13 @@ class Standing extends My_Model{
     //put your code here
         function __construct() {
         parent::__construct('standing', 'id');
+        $this->xmlrpc->server("nfl.jlparry.com/rpc");
+        $request = array();
+        $this->xmlrpc->request($request);
+        $this->xmlrpc->method('since');
+        if(!$this->xmlrpc->send_request()) {
+            echo $this->xmlrpc->display_error();
+        }
     }
 
     function allteams($ordertype) {
