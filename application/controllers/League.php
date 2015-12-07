@@ -22,6 +22,9 @@ class League extends Application {
         $this->render();    
     }
 
+    /**
+    * Display conferences
+    */
     public function conference() {
         $this->data['pagebody'] = 'league/conference';
         $ordertype = $this->input->post('conferenceorder');
@@ -32,6 +35,9 @@ class League extends Application {
         $this->render();
     }
 
+    /**
+    * Display divisions
+    */
     public function division() {
         $this->data['pagebody'] = 'league/division';
         $ordertype = $this->input->post('divisionorder');

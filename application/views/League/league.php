@@ -2,12 +2,14 @@
     <div class="large-9 columns" role="content">
         <div class="row">
             <ul class="button-group">
+            <!-- buttons to switch which tables are displayed -->
                 <li><a href='/league' class="button">League</a></li>
                 <li><a href='/league/conference' class="button">Conference</a></li>
                 <li><a href='/league/division' class="button">Division</a></li>
             </ul>
             <p>Order By...</p>
             <form method="post">
+            <!-- post the data back -->
                 <select name="leagueorder" id="leagueorder" onchange="this.form.submit()">
                     <option>-</option>
                     <option value="City">City</option>

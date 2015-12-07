@@ -2,11 +2,13 @@
     <div class="large-9 columns" role="content">
         <div class="row">
             <ul class="button-group">
+            <!-- buttons to display the pages in the controller -->
                 <li><a href='/league' class="button">League</a></li>
                 <li><a href='/league/conference' class="button">Conference</a></li>
                 <li><a href='/league/division' class="button">Division</a></li>
             </ul>
             <p>Order By...</p>
+            <!-- post the dropdown selction on change -->
             <form action="division" method="post">
                 <select name="divisionorder" id="divisionorder" onchange="this.form.submit()">
                     <option>-</option>
