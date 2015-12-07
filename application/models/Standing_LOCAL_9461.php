@@ -10,40 +10,20 @@
 * The league database and it's functions
 */
 class Standing extends My_Model{
-    //put your code here
         function __construct() {
         parent::__construct('standing', 'id');
+        // connect to xmlrpc server
         $this->xmlrpc->server("nfl.jlparry.com/rpc");
-	    $this->xmlrpc->method('since');
         $request = array('20150830');
         $this->xmlrpc->request($request);
-        if ( ! $this->xmlrpc->send_request()) {
+        $this->xmlrpc->method('since');
+        if(!$this->xmlrpc->send_request()) {
             echo $this->xmlrpc->display_error();
-        } else {	
-            $this->xmlResult = $this->xmlrpc->display_response();
-        }
-    }
-    
-    function updateHistory(){
-        $scores = array();
-        foreach($this->xmlResult as $data) {
-                $data = $this->mapData($data);
-                array_push($scores, $data);
+        } else {
+            $this->xmlresult = $this->xmlrpc->display_response();
         }
     }
 
-    function mapData($source){
-        $record = new stdClass();
-        //parse home and away team scores by tokenizing the ':' delimiter of xml result
-        $scores = explode(":", $source["score"]);
-        $record->home = $source['home'];
-        $record->date = (new DateTime($source["date"]))->format('Y-m-d');
-        $record->homeScore = $scores[0]; //parsed home score
-        $record->awayScore = $scores[1]; //parsed away score
-        $record->away = $source['away'];
-        return $record;
-    }
-    
     /**
     * Get all teams in league.
     */
