@@ -1,16 +1,16 @@
-DROP TABLE IF EXISTS `game_scores`;
-CREATE TABLE IF NOT EXISTS `game_scores` (
+DROP TABLE IF EXISTS `scores`;
+CREATE TABLE IF NOT EXISTS `scores` (
   `Id` int(11) NOT NULL,
   `Number` int(11) NOT NULL,
   `Away` varchar(4) NOT NULL,
   `Home` varchar(4) NOT NULL,
   `Date` date NOT NULL,
   `Score` varchar(7) NOT NULL,
-  `AwayPoints` int(3) NOT NULL,
-  `HomePoints` int(3) NOT NULL
+  `AwayScores` int(3) NOT NULL,
+  `HomeScores` int(3) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=146 DEFAULT CHARSET=utf32;
 
-INSERT INTO `game_scores` (`Id`, `Number`, `Away`, `Home`, `Date`, `Score`, `AwayPoints`, `HomePoints`) VALUES
+INSERT INTO `scores` (`Id`, `Number`, `Away`, `Home`, `Date`, `Score`, `AwayScores`, `HomeScores`) VALUES
 (1, 1, 'PIT', 'NE', '2015-09-10', '21:28', 21, 28),
 (2, 2, 'CAR', 'JAC', '2015-09-13', '20:9', 20, 9),
 (3, 3, 'CLE', 'NYJ', '2015-09-13', '10:31', 10, 31),

@@ -30,7 +30,7 @@
                         <li><a href='/' class="button">Home</a></li>
                         <li><a href='/roster' class="button">Roster</a></li>
                         <li><a href='/league' class="button">League</a></li>
-                        <li><a href='/admin' class="button">CRUD</a></li>
+                        <li><a href='/history' class="button">History</a></li>
                         <li><a href='/about' class="button">About</a></li>
                     </ul>
                 </div>
