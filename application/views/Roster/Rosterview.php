@@ -3,12 +3,14 @@
         <div class="row">
             <div class="col-md-12">
             <p>Order By...</p>
-            <select name="orderbox" id="orderbox">
-                <option value="name">Jersey</option>
-                <option value="jersey">Name</option>
-                <option value="position">Position</option>
-            </select>
-            <button type="submit" id="orderbtn">Reorder</button>
+            <form method="post">
+                <select name="orderbox" id="orderbox" onchange="this.form.submit()">
+                    <option>-</option>
+                    <option value="Id">Jersey</option>
+                    <option value="Name">Name</option>
+                    <option value="Pos">Position</option>
+                </select>
+            </form>
                 <table id="roster" border="1px" class="display" cellspacing="0" width="100%">
                     <th>JERSEY</th>
                     <th>NAME</th>

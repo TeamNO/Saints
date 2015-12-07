@@ -16,16 +16,17 @@ class League extends Application {
     public function index()
     {
         $this->data['pagebody'] = 'league/league';
-
-        $league = $this->standing->all();
+        $ordertype = $this->input->post('leagueorder');
+        $league = $this->standing->allteams($ordertype);
         $this->data['teams'] = $league;
         $this->render();    
     }
 
     public function conference() {
         $this->data['pagebody'] = 'league/conference';
-        $afc = $this->standing->conference('AFC');
-        $nfc = $this->standing->conference('NFC');
+        $ordertype = $this->input->post('conferenceorder');
+        $afc = $this->standing->conference('AFC', $ordertype);
+        $nfc = $this->standing->conference('NFC', $ordertype);
         $this->data['afcteams'] = $afc;
         $this->data['nfcteams'] = $nfc;
         $this->render();
@@ -33,14 +34,15 @@ class League extends Application {
 
     public function division() {
         $this->data['pagebody'] = 'league/division';
-        $afceast = $this->standing->division('AFC', 'East');
-        $afcnorth = $this->standing->division('AFC', 'North');
-        $afcsouth = $this->standing->division('AFC', 'South');
-        $afcwest = $this->standing->division('AFC', 'West');
-        $nfceast = $this->standing->division('NFC', 'East');
-        $nfcnorth = $this->standing->division('NFC', 'North');
-        $nfcsouth = $this->standing->division('NFC', 'South');
-        $nfcwest = $this->standing->division('NFC', 'West');
+        $ordertype = $this->input->post('divisionorder');
+        $afceast = $this->standing->division('AFC', 'East', $ordertype);
+        $afcnorth = $this->standing->division('AFC', 'North', $ordertype);
+        $afcsouth = $this->standing->division('AFC', 'South', $ordertype);
+        $afcwest = $this->standing->division('AFC', 'West', $ordertype);
+        $nfceast = $this->standing->division('NFC', 'East', $ordertype);
+        $nfcnorth = $this->standing->division('NFC', 'North', $ordertype);
+        $nfcsouth = $this->standing->division('NFC', 'South', $ordertype);
+        $nfcwest = $this->standing->division('NFC', 'West', $ordertype);
         $this->data['afceast'] = $afceast;
         $this->data['afcnorth'] = $afcnorth;
         $this->data['afcsouth'] = $afcsouth;

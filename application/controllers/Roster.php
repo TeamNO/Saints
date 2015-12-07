@@ -44,7 +44,8 @@ class Roster extends Application
 
         $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-        $roster = $this->playerroster->fetch_players($config['per_page'], $page);
+        $ordertype = $this->input->post('orderbox');
+        $roster = $this->playerroster->fetch_players($config['per_page'], $page, $ordertype);
         $str_links = $this->pagination->create_links();
         $this->data['saintroster'] = $roster;
         $this->data['pagination_links'] = $str_links;
@@ -59,10 +60,6 @@ class Roster extends Application
 
         $this->data['pagebody'] = 'roster/show';
         $this->data['title'] = 'Team Roster - ' . $player->Name;
-    }
-
-    function order($type) {
-
     }
     
     function create()

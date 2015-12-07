@@ -17,20 +17,23 @@ class Standing extends My_Model{
         parent::__construct('standing', 'id');
     }
 
-    function all() {
+    function allteams($ordertype) {
         $CI = &get_instance();
+        $CI->db->order_by($ordertype, "asc");
         $query = $CI->db->get('standing');
         return $query->result_array();
     }
 
-    function conference($conf) {
+    function conference($conf, $ordertype) {
     	$CI = &get_instance();
+        $CI->db->order_by($ordertype, "asc");
     	$query = $CI->db->query("SELECT * FROM standing WHERE cName = '$conf';");
     	return $query->result_array();
     }
 
-    function division($conf, $div) {
+    function division($conf, $div, $ordertype) {
     	$CI = &get_instance();
+        $CI->db->order_by($ordertype, "asc");
     	$query = $CI->db->query("SELECT * FROM standing WHERE cName = '$conf' AND dName = '$div';");
     	return $query->result_array();
     }

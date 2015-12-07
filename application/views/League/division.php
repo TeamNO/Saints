@@ -6,10 +6,20 @@
                 <li><a href='/league/conference' class="button">Conference</a></li>
                 <li><a href='/league/division' class="button">Division</a></li>
             </ul>
+            <p>Order By...</p>
+            <form action="division" method="post">
+                <select name="divisionorder" id="divisionorder" onchange="this.form.submit()">
+                    <option>-</option>
+                    <option value="City">City</option>
+                    <option value="Net">Standing</option>
+                    <option value="Team">Team</option>
+                </select>
+            </form>
             <div class="col-md-12">
                 <h1>AFC EAST</h1>
                 <table id="leagues" border="1px" class="display" cellspacing="0" width="100%">
                     <th>TEAM</th>
+                    <th>CITY</th>
                     <th>W</th>
                     <th>L</th>
                     <th>T</th>
@@ -31,6 +41,7 @@
                         {afceast}
                             <tr>
                                 <td>{Team}</td>
+                                <th>{City}</th>
                                 <th>{W}</th>
                                 <th>{L}</th>
                                 <th>{T}</th>
@@ -57,6 +68,7 @@
                 <h1>AFC NORTH</h1>
                 <table id="leagues" border="1px" class="display" cellspacing="0" width="100%">
                     <th>TEAM</th>
+                    <th>CITY</th>
                     <th>W</th>
                     <th>L</th>
                     <th>T</th>
@@ -78,6 +90,7 @@
                         {afcnorth}
                             <tr>
                                 <td>{Team}</td>
+                                <td>{City}</td>
                                 <th>{W}</th>
                                 <th>{L}</th>
                                 <th>{T}</th>
@@ -104,6 +117,7 @@
                 <h1>AFC SOUTH</h1>
                 <table id="leagues" border="1px" class="display" cellspacing="0" width="100%">
                     <th>TEAM</th>
+                    <th>CITY</th>
                     <th>W</th>
                     <th>L</th>
                     <th>T</th>
@@ -125,6 +139,7 @@
                         {afcsouth}
                             <tr>
                                 <td>{Team}</td>
+                                <td>{City}</td>
                                 <th>{W}</th>
                                 <th>{L}</th>
                                 <th>{T}</th>
@@ -151,6 +166,7 @@
                 <h1>AFC WEST</h1>
                 <table id="leagues" border="1px" class="display" cellspacing="0" width="100%">
                     <th>TEAM</th>
+                    <th>CITY</th>
                     <th>W</th>
                     <th>L</th>
                     <th>T</th>
@@ -172,6 +188,7 @@
                         {afcwest}
                             <tr>
                                 <td>{Team}</td>
+                                <td>{City}</td>
                                 <th>{W}</th>
                                 <th>{L}</th>
                                 <th>{T}</th>
@@ -198,6 +215,7 @@
                 <h1>NFC EAST</h1>
                 <table id="leagues" border="1px" class="display" cellspacing="0" width="100%">
                     <th>TEAM</th>
+                    <th>CITY</th>
                     <th>W</th>
                     <th>L</th>
                     <th>T</th>
@@ -219,6 +237,7 @@
                         {nfceast}
                             <tr>
                                 <td>{Team}</td>
+                                <td>{City}</td>
                                 <th>{W}</th>
                                 <th>{L}</th>
                                 <th>{T}</th>
@@ -245,6 +264,7 @@
                 <h1>NFC NORTH</h1>
                 <table id="leagues" border="1px" class="display" cellspacing="0" width="100%">
                     <th>TEAM</th>
+                    <th>CITY</th>
                     <th>W</th>
                     <th>L</th>
                     <th>T</th>
@@ -266,6 +286,7 @@
                         {nfcnorth}
                             <tr>
                                 <td>{Team}</td>
+                                <td>{City}</td>
                                 <th>{W}</th>
                                 <th>{L}</th>
                                 <th>{T}</th>
@@ -292,6 +313,7 @@
                 <h1>NFC SOUTH</h1>
                 <table id="leagues" border="1px" class="display" cellspacing="0" width="100%">
                     <th>TEAM</th>
+                    <th>CITY</th>
                     <th>W</th>
                     <th>L</th>
                     <th>T</th>
@@ -313,6 +335,7 @@
                         {nfcsouth}
                             <tr>
                                 <td>{Team}</td>
+                                <td>{City}</td>
                                 <th>{W}</th>
                                 <th>{L}</th>
                                 <th>{T}</th>
@@ -339,6 +362,7 @@
                 <h1>NFC WEST</h1>
                 <table id="leagues" border="1px" class="display" cellspacing="0" width="100%">
                     <th>TEAM</th>
+                    <th>CITY</th>
                     <th>W</th>
                     <th>L</th>
                     <th>T</th>
@@ -360,6 +384,7 @@
                         {nfcwest}
                             <tr>
                                 <td>{Team}</td>
+                                <td>{City}</td>
                                 <th>{W}</th>
                                 <th>{L}</th>
                                 <th>{T}</th>

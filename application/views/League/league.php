@@ -6,9 +6,19 @@
                 <li><a href='/league/conference' class="button">Conference</a></li>
                 <li><a href='/league/division' class="button">Division</a></li>
             </ul>
+            <p>Order By...</p>
+            <form method="post">
+                <select name="leagueorder" id="leagueorder" onchange="this.form.submit()">
+                    <option>-</option>
+                    <option value="City">City</option>
+                    <option value="Net">Standing</option>
+                    <option value="Team">Team</option>
+                </select>
+            </form>
             <div class="col-md-12">
                 <table id="leagues" border="1px" class="display" cellspacing="0" width="100%">
                     <th>TEAM</th>
+                    <th>CITY</th>
                     <th>CONF</th>
                     <th>DIV</th>
                     <th>W</th>
@@ -32,6 +42,7 @@
                         {teams}
                             <tr>
                                 <td>{Team}</td>
+                                <th>{City}</th>
                                 <td>{cName}</td>
                                 <td>{dName}</td>   
                                 <th>{W}</th>
