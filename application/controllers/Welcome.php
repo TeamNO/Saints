@@ -79,6 +79,7 @@ class Welcome extends Application {
     
     public function updateStandings()
 	{
+            echo 'This may take a bit. Please wait.<br>';
 		$url = 'nfl.jlparry.com/rpc';
 		$this->load->library('xmlrpc');
 		$this->xmlrpc->server($url, 80);
@@ -90,7 +91,7 @@ class Welcome extends Application {
         }
         else
         {
-            echo 'Failed truncation. Need the checkbox ticked.<br>';
+            echo 'Table not truncated (checkbox has to be ticked)<br>';
         }
 
         $request = array('20150101');
@@ -165,8 +166,8 @@ class Welcome extends Application {
         }
         echo 'Standings updated!<br>';
 
-		echo count($this->xmlrpc->display_response()) . ' <br>';
-        echo 'Done!<br>';
+		echo count($this->xmlrpc->display_response()) . ' amount of db data updated. <br>';
+        echo 'Everything is done!<br>';
     }
     
    
