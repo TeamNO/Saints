@@ -15,10 +15,9 @@ class Standing extends My_Model{
     //put your code here
         function __construct() {
         parent::__construct('standing', 'id');
-        $this->load->library('xmlrpc');
-        $this->xmlrpc->server("nfl.jlparry.com/rpc", 80);
-	$this->xmlrpc->method('since');
-        $request = array('19321203');
+        $this->xmlrpc->server("nfl.jlparry.com/rpc");
+	    $this->xmlrpc->method('since');
+        $request = array('20150830');
         $this->xmlrpc->request($request);
         if ( ! $this->xmlrpc->send_request()) {
             echo $this->xmlrpc->display_error();
