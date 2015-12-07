@@ -3,21 +3,21 @@
 class Scores extends MY_Model
 {
     function __construct() {
-        parent::__construct('game_scores', 'Id');
+        parent::__construct('scores', 'Id');
     }
 
     /**
      * Returns records
      */
-    function get_since() {
+    function getSome() {
         $query = $this->db->get('standing');
 
         return $query->result_array();
     }
 
-    function get_date_since_last_update()
+    function lastUpdate()
     {
-        $result = $this->db->query("SELECT MAX(Date) as date FROM game_scores")
+        $result = $this->db->query("SELECT MAX(Date) as date FROM scores")
             ->row()
             ->date;
         if (empty($result))
@@ -27,7 +27,7 @@ class Scores extends MY_Model
 
     function truncate()
     {
-        $this->db->query("truncate game_scores");
+        $this->db->query("truncate scores");
     }
 
     /**
@@ -35,7 +35,7 @@ class Scores extends MY_Model
      */
     function count()
     {
-        return $this->db->get('game_scores')->num_rows();
+        return $this->db->get('scores')->num_rows();
     }
 
     function getAverage($TLC)
@@ -50,14 +50,14 @@ class Scores extends MY_Model
     function get5Avg($TLC)
     {
         $points = 0;
-        $last_5_games = $this->db->query("SELECT * FROM game_scores WHERE (Away = '$TLC' OR Home = '$TLC') ORDER BY Date DESC LIMIT 5")->result();
+        $last_5_games = $this->db->query("SELECT * FROM scores WHERE (Away = '$TLC' OR Home = '$TLC') ORDER BY Date DESC LIMIT 5")->result();
 
         foreach ($last_5_games as $game) {
             if ($game->Away == $TLC) {
-                $points += $game->AwayPoints;
+                $points += $game->AwayScores;
             }
             if ($game->Home == $TLC) {
-                $points += $game->HomePoints;
+                $points += $game->HomeScores;
             }
         }
 
@@ -71,7 +71,7 @@ class Scores extends MY_Model
     {
         $score = 0;
         $previous5Games = $this->db->query("
-            SELECT * FROM game_scores
+            SELECT * FROM scores
             WHERE (Away = '$TLC1' OR Home = '$TLC1')
             AND (Away = '$TLC2' OR Home = '$TLC2')
             ORDER BY Date DESC LIMIT 5")
@@ -79,10 +79,10 @@ class Scores extends MY_Model
             //go through the 5 games
         foreach ($previous5Games as $game) {
             if ($game->Away == $TLC1) {
-                $score += $game->AwayPoints;
+                $score += $game->AwayScores;
             }
             if ($game->Home == $TLC1) {
-                $score += $game->HomePoints;
+                $score += $game->HomeScores;
             }
         }
 

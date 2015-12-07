@@ -31,6 +31,7 @@ class Welcome extends Application {
         $this->data['title'] = 'Home';
         $this->render();
     }
+    
     public function predict()
     {
          $leagueteams = $this->input->post('leagueteams', TRUE);
@@ -73,6 +74,99 @@ class Welcome extends Application {
             echo 'Tie game.<br>';
 
 		echo $homePrediction . ' to ' . $finalPrediction;
+    }
+
+    
+    public function updateStandings()
+	{
+		$url = 'nfl.jlparry.com/rpc';
+		$this->load->library('xmlrpc');
+		$this->xmlrpc->server($url, 80);
+		$this->xmlrpc->method('since');
+
+        if ($this->input->post('dbreset') === 'true') {
+            $this->scores->truncate();
+            echo 'Success! Table is now truncated.<br>';
+        }
+        else
+        {
+            echo 'Failed truncation. Need the checkbox ticked.<br>';
+        }
+
+        $request = array('20150101');
+		$date_since_last_update = $this->scores->lastUpdate();
+        if ($this->input->post('reset') === 'false' && $date_since_last_update) {
+            $request = array($date_since_last_update);
+            
+        }
+
+		$this->xmlrpc->request($request);             
+
+        // Make game records
+        foreach ($this->xmlrpc->display_response() as $key => $val) {
+            $game_score = $this->scores->create();
+            $game_score->Number = $val['number'];
+            $game_score->Away   = $val['away'];
+            $game_score->Home   = $val['home'];
+            $game_score->Date   = $val['date'];
+            $game_score->Score  = $val['score'];
+            $game_score->AwayScores = explode(':', $val['score'])[0];
+            $game_score->HomeScores = explode(':', $val['score'])[1];
+            $this->scores->add($game_score);
+        }
+
+        // Clear all scores
+        $this->standing->reset();
+        echo 'Standing values all cleared.<br>';
+           
+        // Re-calculate standings
+        $scores = $this->scores->all();
+        foreach ($scores as $score) {
+            // Win for away and loss for home
+            if ($score->AwayScores > $score->HomeScores) {
+                // Away
+                
+                $this->db->set('W', 'W+1', FALSE);
+                $this->db->set('Net', 'Net+' . $score->AwayScores, FALSE);
+                $this->db->where('TLC', $score->Away);
+                $this->db->update('standing');
+                // Home
+                $this->db->set('L', 'L+1', FALSE);
+                $this->db->where('TLC', $score->Home);
+                $this->db->update('standing');
+            }
+
+            // Win for home and loss for away
+            if ($score->AwayScores < $score->HomeScores) {
+                // Home
+                $this->db->set('W', 'W+1', FALSE);
+                $this->db->set('Net', 'Net+' . $score->HomeScores, FALSE);
+                $this->db->where('TLC', $score->Home);
+                $this->db->update('standing');
+                // Away
+                $this->db->set('L', 'L+1', FALSE);
+                $this->db->where('TLC', $score->Away);
+                $this->db->update('standing');
+            }
+
+            // Tie
+            if ($score->AwayScores == $score->HomeScores) {
+                // Home
+                $this->db->set('T', 'T+1', FALSE);
+                $this->db->set('Net', 'Net+' . $score->HomeScores, FALSE);
+                $this->db->where('TLC', $score->Home);
+                $this->db->update('standing');
+                // Away
+                $this->db->set('T', 'T+1', FALSE);
+                $this->db->set('Net', 'Net+' . $score->AwayScores, FALSE);
+                $this->db->where('TLC', $score->Away);
+                $this->db->update('standing');
+            }
+        }
+        echo 'Standings updated!<br>';
+
+		echo count($this->xmlrpc->display_response()) . ' <br>';
+        echo 'Done!<br>';
     }
     
    
