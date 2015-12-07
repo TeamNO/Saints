@@ -23,7 +23,7 @@
                        <!-- This is where the roster model data is displayed. Will display all the players in the roster.-->
                         {saintroster}
                             <tr>
-                                <td>{Id}</td>
+                                <td>{ID}</td>
                                 <td>{Name}</td>
                                 <td>{Pos}</td>
                                 <td>{Height}</td>
